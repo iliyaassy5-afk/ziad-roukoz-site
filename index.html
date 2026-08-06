@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ziad Roukoz — Attorney at Law | Beirut · Dubai</title>
+<meta name="description" content="Ziad Roukoz — Managing Partner at A&A Associate Law Firm & Legal Advisors (UAE) and principal of Roukoz Law Firm (Lebanon). Arbitration, construction law, FIDIC contracts, corporate & commercial law.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#10151c;
+  --ink-soft:#1a222c;
+  --paper:#f7f4ee;
+  --paper-warm:#efe9df;
+  --gold:#b98d3e;
+  --gold-light:#d4b06a;
+  --gold-pale:#e9d9b8;
+  --text:#2a3038;
+  --text-soft:#5c646e;
+  --line:rgba(16,21,28,.12);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text);background:var(--paper);line-height:1.7;font-weight:300}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--ink);font-weight:600;line-height:1.15}
+img{max-width:100%}
+a{color:inherit}
+
+/* ---------- Nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:22px 6vw;transition:.4s;color:#fff}
+nav.scrolled{background:rgba(16,21,28,.96);backdrop-filter:blur(12px);padding:14px 6vw;box-shadow:0 4px 30px rgba(0,0,0,.25)}
+.nav-logo{font-family:var(--serif);font-size:1.35rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#fff;text-decoration:none}
+.nav-logo span{color:var(--gold-light)}
+.nav-links{display:flex;gap:34px;list-style:none;align-items:center}
+.nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;transition:.3s;position:relative}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--gold-light);transition:.3s}
+.nav-links a:hover::after{width:100%}
+.nav-cta{border:1px solid var(--gold-light);padding:9px 22px !important;color:var(--gold-light) !important}
+.nav-cta:hover{background:var(--gold-light);color:var(--ink) !important}
+.nav-cta::after{display:none}
+.burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:6px}
+.burger span{display:block;width:26px;height:2px;background:#fff;transition:.3s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ---------- Hero ---------- */
+header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(160deg,#0d1219 0%,#141c26 55%,#1b2531 100%);color:#fff;padding:120px 6vw 80px}
+#skyline{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.hero-inner{position:relative;z-index:2;max-width:900px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:.75rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-light);margin-bottom:28px}
+.hero-eyebrow::before{content:'';width:48px;height:1px;background:var(--gold-light)}
+header h1{font-size:clamp(3rem,7.5vw,5.6rem);color:#fff;font-weight:500;margin-bottom:10px}
+header h1 em{font-style:italic;color:var(--gold-light)}
+.hero-sub{font-family:var(--serif);font-size:clamp(1.2rem,2.4vw,1.7rem);font-style:italic;color:rgba(255,255,255,.75);margin-bottom:36px;max-width:640px}
+.hero-cities{display:flex;gap:0;margin-bottom:48px;flex-wrap:wrap}
+.hero-city{padding:10px 26px;border:1px solid rgba(255,255,255,.25);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.hero-city+.hero-city{border-left:none}
+.hero-city b{color:var(--gold-light);font-weight:500}
+.hero-actions{display:flex;gap:18px;flex-wrap:wrap}
+.btn{display:inline-block;padding:16px 38px;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;transition:.35s;border:1px solid var(--gold);cursor:pointer;font-family:var(--sans)}
+.btn-solid{background:var(--gold);color:#fff}
+.btn-solid:hover{background:var(--gold-light);border-color:var(--gold-light);transform:translateY(-2px)}
+.btn-ghost{color:var(--gold-light);border-color:rgba(212,176,106,.6)}
+.btn-ghost:hover{background:rgba(212,176,106,.12);transform:translateY(-2px)}
+.scroll-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.5);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll-hint::after{content:'';width:1px;height:44px;background:linear-gradient(to bottom,var(--gold-light),transparent);animation:drip 2s infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- Sections ---------- */
+section{padding:110px 6vw}
+.sec-label{font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.sec-label::before{content:'';width:40px;height:1px;background:var(--gold)}
+.sec-title{font-size:clamp(2rem,4.4vw,3.2rem);margin-bottom:26px;max-width:700px}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ---------- About ---------- */
+.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:start;max-width:1200px;margin:0 auto}
+.about-text p{margin-bottom:20px;font-size:1.02rem;color:var(--text-soft)}
+.about-text p strong{color:var(--ink);font-weight:500}
+.drop::first-letter{font-family:var(--serif);font-size:3.4em;float:left;line-height:.85;padding-right:12px;color:var(--gold)}
+.cred-card{background:var(--ink);color:#fff;padding:44px 40px;position:relative}
+.cred-card::before{content:'';position:absolute;inset:12px;border:1px solid rgba(212,176,106,.35);pointer-events:none}
+.cred-card h3{color:var(--gold-light);font-size:1.4rem;margin-bottom:24px}
+.cred-item{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.cred-item:last-child{border-bottom:none}
+.cred-item .deg{font-family:var(--serif);font-size:1.12rem;color:#fff;display:block;margin-bottom:4px}
+.cred-item .inst{font-size:.82rem;color:rgba(255,255,255,.6);letter-spacing:.04em}
+
+/* ---------- Stats ---------- */
+.stats{background:var(--ink);color:#fff;padding:80px 6vw}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;max-width:1150px;margin:0 auto;text-align:center}
+.stat-num{font-family:var(--serif);font-size:3.4rem;color:var(--gold-light);line-height:1}
+.stat-num sup{font-size:1.6rem;top:-1em}
+.stat-label{font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:12px}
+
+/* ---------- Practice areas ---------- */
+.practice{background:var(--paper-warm)}
+.practice-intro{max-width:640px;color:var(--text-soft);margin-bottom:56px}
+.pa-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;max-width:1250px;margin:0 auto}
+.pa-card{background:var(--paper);border:1px solid var(--line);padding:30px 28px;cursor:pointer;transition:.35s;position:relative;overflow:hidden}
+.pa-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:.4s}
+.pa-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(16,21,28,.1)}
+.pa-card:hover::before,.pa-card.open::before{height:100%}
+.pa-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.pa-head h3{font-size:1.3rem;font-weight:600}
+.pa-icon{flex-shrink:0;width:30px;height:30px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:1rem;transition:.35s;line-height:1}
+.pa-card.open .pa-icon{transform:rotate(45deg);background:var(--gold);color:#fff}
+.pa-body{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.pa-body p{padding-top:16px;font-size:.9rem;color:var(--text-soft)}
+.pa-tag{display:inline-block;margin-top:14px;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-pale);padding:4px 12px}
+
+/* ---------- Timeline ---------- */
+.timeline-wrap{max-width:860px;margin:60px auto 0;position:relative}
+.timeline-wrap::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--gold),var(--line))}
+.tl-item{position:relative;padding:0 0 54px 70px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:12px;top:6px;width:17px;height:17px;border-radius:50%;border:2px solid var(--gold);background:var(--paper);transition:.4s}
+.tl-item:hover .tl-dot{background:var(--gold);box-shadow:0 0 0 6px rgba(185,141,62,.18)}
+.tl-role{font-family:var(--serif);font-size:1.45rem;color:var(--ink);font-weight:600}
+.tl-firm{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:4px 0 10px}
+.tl-desc{font-size:.92rem;color:var(--text-soft);max-width:560px}
+
+/* ---------- Offices toggle ---------- */
+.offices{background:var(--ink);color:#fff}
+.offices .sec-title{color:#fff}
+.office-toggle{display:inline-flex;border:1px solid rgba(212,176,106,.5);margin-bottom:50px}
+.office-toggle button{background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--sans);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;padding:14px 34px;cursor:pointer;transition:.3s}
+.office-toggle button.active{background:var(--gold);color:#fff}
+.office-panels{position:relative;max-width:1150px}
+.office-panel{display:none;animation:fadeUp .5s ease}
+.office-panel.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.office-firm{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.3rem);color:var(--gold-light);margin-bottom:8px}
+.office-note{color:rgba(255,255,255,.65);max-width:620px;margin-bottom:40px;font-size:.95rem}
+.office-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.office-card{border:1px solid rgba(255,255,255,.14);padding:30px;transition:.35s}
+.office-card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.office-card h4{color:#fff;font-size:1.25rem;margin-bottom:6px}
+.office-card .city-tag{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:14px}
+.office-card p{font-size:.87rem;color:rgba(255,255,255,.65)}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;max-width:1150px;margin:0 auto;align-items:start}
+.contact-list{list-style:none;margin-top:34px}
+.contact-list li{margin-bottom:8px}
+.contact-list a{display:flex;align-items:center;gap:18px;text-decoration:none;padding:16px 18px;border:1px solid var(--line);transition:.3s;background:var(--paper)}
+.contact-list a:hover{border-color:var(--gold);transform:translateX(6px)}
+.ci{width:42px;height:42px;flex-shrink:0;border-radius:50%;background:var(--ink);color:var(--gold-light);display:grid;place-items:center}
+.ci svg{width:18px;height:18px;fill:currentColor}
+.contact-list .cl-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-soft);display:block}
+.contact-list .cl-value{font-size:1rem;color:var(--ink);font-weight:400}
+form{background:var(--paper-warm);padding:44px 40px;border:1px solid var(--line)}
+form h3{font-size:1.5rem;margin-bottom:24px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-soft);margin-bottom:8px}
+.field input,.field textarea,.field select{width:100%;padding:13px 15px;border:1px solid var(--line);background:var(--paper);font-family:var(--sans);font-size:.95rem;color:var(--text);transition:.3s;font-weight:300}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(185,141,62,.14)}
+form .btn{width:100%;text-align:center;border:none;background:var(--ink);color:#fff}
+form .btn:hover{background:var(--gold)}
+.form-msg{display:none;margin-top:16px;padding:14px;background:#e8f2e6;border:1px solid #b7d4b1;color:#2f5d2a;font-size:.88rem}
+
+/* ---------- Footer ---------- */
+footer{background:#0b0f15;color:rgba(255,255,255,.55);padding:54px 6vw 34px;font-size:.82rem}
+.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;max-width:1250px;margin:0 auto 34px}
+.foot-logo{font-family:var(--serif);font-size:1.3rem;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.foot-logo span{color:var(--gold-light)}
+.foot-note{max-width:1250px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:.72rem;line-height:1.8;color:rgba(255,255,255,.4)}
+
+/* ---------- Responsive ---------- */
+@media(max-width:900px){
+  .nav-links{position:fixed;inset:0;background:rgba(13,18,25,.98);flex-direction:column;justify-content:center;gap:30px;transform:translateX(100%);transition:.4s}
+  .nav-links.open{transform:none}
+  .nav-links a{font-size:1rem}
+  .burger{display:flex;z-index:110}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:44px}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  section{padding:80px 6vw}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="nav-logo" href="#top">Ziad <span>Roukoz</span></a>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#practice">Practice Areas</a></li>
+    <li><a href="#journey">Career</a></li>
+    <li><a href="#offices">Offices</a></li>
+    <li><a href="#contact" class="nav-cta">Consultation</a></li>
+  </ul>
+</nav>
+
+<header id="top">
+  <svg id="skyline" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="bldg" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#232f3d"/><stop offset="1" stop-color="#131a23"/>
+      </linearGradient>
+    </defs>
+    <g fill="url(#bldg)">
+      <rect x="60" y="470" width="70" height="330"/>
+      <rect x="150" y="520" width="55" height="280"/>
+      <polygon points="260,800 260,420 290,380 320,420 320,800"/>
+      <rect x="360" y="560" width="80" height="240"/>
+      <rect x="470" y="490" width="46" height="310"/>
+      <polygon points="640,800 640,300 660,140 680,300 680,800"/>
+      <rect x="720" y="440" width="60" height="360"/>
+      <rect x="810" y="530" width="90" height="270"/>
+      <polygon points="950,800 950,380 1000,330 1050,380 1050,800"/>
+      <rect x="1090" y="480" width="55" height="320"/>
+      <rect x="1180" y="540" width="75" height="260"/>
+      <rect x="1290" y="460" width="58" height="340"/>
+    </g>
+    <g fill="#d4b06a" opacity=".55" id="windows"></g>
+  </svg>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Attorney at Law · Arbitrator</div>
+    <h1>Ziad <em>Roukoz</em></h1>
+    <p class="hero-sub">Cross-border counsel spanning the Middle East — from the courts of Beirut to the arbitration tables of Dubai.</p>
+    <div class="hero-cities">
+      <div class="hero-city"><b>Beirut</b> · Roukoz Law Firm</div>
+      <div class="hero-city"><b>Dubai</b> · A&amp;A Associate</div>
+    </div>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-solid">Request a Consultation</a>
+      <a href="#practice" class="btn btn-ghost">Explore Practice Areas</a>
+    </div>
+  </div>
+  <a class="scroll-hint" href="#about">Scroll</a>
+</header>
+
+<section id="about">
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <div class="sec-label">About</div>
+      <h2 class="sec-title">Counsel built on rigour, discretion &amp; results</h2>
+      <p class="drop">Ziad Roukoz is a Lebanese attorney and Managing Partner of <strong>A&amp;A Associate Law Firm &amp; Legal Advisors</strong> in the United Arab Emirates, and the principal of <strong>Roukoz Law Firm</strong> in Lebanon. His practice bridges civil-law tradition and the fast-moving commercial reality of the Gulf.</p>
+      <p>He brings extensive experience in <strong>construction law — with a specialty in FIDIC contracts</strong> — alongside general commercial law, banking, project finance and private equity. He specialises in <strong>international and domestic arbitration</strong> proceedings, with a particular focus on high-value construction and commercial disputes.</p>
+      <p>Before leading A&amp;A Associate, he served as Counsel at AL-HARBI Law Firm and held senior associate positions at established Lebanese firms, advising businesses large and small as well as private individuals — always with the same standard: flexible, creative problem-solving delivered with professionalism.</p>
+    </div>
+    <aside class="cred-card reveal">
+      <h3>Education &amp; Credentials</h3>
+      <div class="cred-item">
+        <span class="deg">LL.M. — Arbitration &amp; Alternative Dispute Resolution</span>
+        <span class="inst">Filière Francophone, Lebanese University, in collaboration with Université Paris 2 Panthéon-Assas</span>
+      </div>
+      <div class="cred-item">
+        <span class="deg">LL.B. — Bachelor of Laws</span>
+        <span class="inst">Holy Spirit University of Kaslik (USEK), Lebanon</span>
+      </div>
+      <div class="cred-item">
+        <span class="deg">Managing Partner</span>
+        <span class="inst">A&amp;A Associate Law Firm &amp; Legal Advisors — UAE</span>
+      </div>
+      <div class="cred-item">
+        <span class="deg">Principal</span>
+        <span class="inst">Roukoz Law Firm — Lebanon</span>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stats-row">
+    <div class="reveal"><div class="stat-num" data-count="2">0</div><div class="stat-label">Jurisdictions</div></div>
+    <div class="reveal"><div class="stat-num" data-count="4">0</div><div class="stat-label">Offices</div></div>
+    <div class="reveal"><div class="stat-num" data-count="16">0</div><div class="stat-label">Practice Areas</div></div>
+    <div class="reveal"><div class="stat-num" data-count="3">0</div><div class="stat-label">Working Languages</div></div>
+  </div>
+</div>
+
+<section id="practice" class="practice">
+  <div class="reveal">
+    <div class="sec-label">Expertise</div>
+    <h2 class="sec-title">Practice Areas</h2>
+    <p class="practice-intro">Click any area to see how the firm can assist. Core strengths sit in arbitration and construction, supported by a full-service commercial practice.</p>
+  </div>
+  <div class="pa-grid" id="paGrid"></div>
+</section>
+
+<section id="journey">
+  <div class="reveal">
+    <div class="sec-label">Career</div>
+    <h2 class="sec-title">A journey across two legal worlds</h2>
+  </div>
+  <div class="timeline-wrap">
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-role">Senior Legal Associate</div>
+      <div class="tl-firm">Sami Nahas Law Firm — Lebanon</div>
+      <p class="tl-desc">Early grounding in Lebanese civil practice, litigation and commercial advisory work.</p>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-role">Senior Associate</div>
+      <div class="tl-firm">Badri &amp; Salim El Meouchi Law Firm — Beirut</div>
+      <p class="tl-desc">Corporate and banking matters at one of Lebanon's established full-service firms.</p>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-role">Counsel</div>
+      <div class="tl-firm">AL-HARBI Law Firm</div>
+      <p class="tl-desc">Regional disputes and construction advisory, deepening the FIDIC and arbitration specialty.</p>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-role">Counsel → Managing Partner</div>
+      <div class="tl-firm">A&amp;A Associate Law Firm &amp; Legal Advisors — UAE</div>
+      <p class="tl-desc">Leading the firm's legal operations and strategy across Dubai, Abu Dhabi and Ras Al Khaimah.</p>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-role">Principal</div>
+      <div class="tl-firm">Roukoz Law Firm — Lebanon</div>
+      <p class="tl-desc">Serving Lebanese clients and the diaspora with cross-border reach between Beirut and the Gulf.</p>
+    </div>
+  </div>
+</section>
+
+<section id="offices" class="offices">
+  <div class="reveal">
+    <div class="sec-label" style="color:var(--gold-light)">Presence</div>
+    <h2 class="sec-title">One counsel. Two jurisdictions.</h2>
+    <div class="office-toggle" role="tablist">
+      <button class="active" data-panel="uae" role="tab">United Arab Emirates</button>
+      <button data-panel="leb" role="tab">Lebanon</button>
+    </div>
+  </div>
+  <div class="office-panels">
+    <div class="office-panel active" id="panel-uae">
+      <div class="office-firm">A&amp;A Associate Law Firm &amp; Legal Advisors</div>
+      <p class="office-note">A top-rated legal practice serving businesses large and small as well as private individuals — corporate law, litigation and alternative dispute resolution across the Emirates.</p>
+      <div class="office-cards">
+        <div class="office-card"><span class="city-tag">Dubai</span><h4>Emarat Atrium</h4><p>Office 447, 4th Floor<br>Emarat Atrium, Dubai</p></div>
+        <div class="office-card"><span class="city-tag">Abu Dhabi</span><h4>Liwa Street</h4><p>Office 103, Al Hashimi Jewelry Building<br>Liwa Street, Abu Dhabi</p></div>
+        <div class="office-card"><span class="city-tag">Ras Al Khaimah</span><h4>RAKEZ Business Zone</h4><p>Office 702 B, RCB, RAK Custom Building<br>RAKEZ Business Zone FZ</p></div>
+      </div>
+    </div>
+    <div class="office-panel" id="panel-leb">
+      <div class="office-firm">Roukoz Law Firm</div>
+      <p class="office-note">The firm's Lebanese practice — litigation, civil and commercial matters before the Lebanese courts, and a bridge for clients doing business between Lebanon and the Gulf.</p>
+      <div class="office-cards">
+        <div class="office-card"><span class="city-tag">Beirut · Lebanon</span><h4>Roukoz Law Firm</h4><p>Serving clients across Lebanon<br>and the Lebanese diaspora worldwide.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="sec-label">Contact</div>
+      <h2 class="sec-title">Let's discuss your matter</h2>
+      <p style="color:var(--text-soft);max-width:460px">Initial enquiries are handled with strict confidentiality. Reach out through any channel below.</p>
+      <ul class="contact-list">
+        <li><a href="tel:+971504257019">
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.7.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.5.6 3.7.1.3 0 .7-.2 1l-2.3 2.1z"/></svg></span>
+          <span><span class="cl-label">Phone</span><span class="cl-value">+971 50 425 7019</span></span>
+        </a></li>
+        <li><a href="https://wa.me/971564086728" target="_blank" rel="noopener">
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.3.4c-.1.1-.2.3-.1.5.1.2.6 1.1 1.4 1.8 1 .9 1.8 1.2 2.1 1.3.2.1.4.1.5-.1l.7-.9c.2-.2.4-.3.6-.2l2 1c.2.1.4.2.4.3.1.1.1.7-.2 1.3z"/></svg></span>
+          <span><span class="cl-label">WhatsApp</span><span class="cl-value">+971 56 408 6728</span></span>
+        </a></li>
+        <li><a href="mailto:info@aalegal.ae">
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
+          <span><span class="cl-label">Email</span><span class="cl-value">info@aalegal.ae</span></span>
+        </a></li>
+        <li><a href="https://aalegal.ae" target="_blank" rel="noopener">
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm7 9h-3a15 15 0 0 0-1.3-5.6A8 8 0 0 1 19 11zM12 4c.9 1.2 1.7 3.3 1.9 7h-3.8c.2-3.7 1-5.8 1.9-7zM5 13h3a15 15 0 0 0 1.3 5.6A8 8 0 0 1 5 13zm4.3-7.6A15 15 0 0 0 8 11H5a8 8 0 0 1 4.3-5.6zM12 20c-.9-1.2-1.7-3.3-1.9-7h3.8c-.2 3.7-1 5.8-1.9 7zm2.7-1.4A15 15 0 0 0 16 13h3a8 8 0 0 1-4.3 5.6z"/></svg></span>
+          <span><span class="cl-label">Firm Website — UAE</span><span class="cl-value">aalegal.ae</span></span>
+        </a></li>
+      </ul>
+    </div>
+    <form id="consultForm" class="reveal">
+      <h3>Request a Consultation</h3>
+      <div class="field"><label for="fname">Full Name</label><input id="fname" type="text" required placeholder="Your name"></div>
+      <div class="field"><label for="femail">Email</label><input id="femail" type="email" required placeholder="you@example.com"></div>
+      <div class="field"><label for="fmatter">Matter Type</label>
+        <select id="fmatter">
+          <option>Arbitration / Dispute Resolution</option>
+          <option>Construction / FIDIC</option>
+          <option>Corporate &amp; Commercial</option>
+          <option>Banking &amp; Finance</option>
+          <option>Real Estate</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field"><label for="fmsg">Brief Description</label><textarea id="fmsg" rows="4" placeholder="Tell us briefly about your matter…"></textarea></div>
+      <button type="submit" class="btn">Send Enquiry</button>
+      <div class="form-msg" id="formMsg">Thank you — your enquiry has been prepared in your email client. We treat all communications as confidential.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-logo">Ziad <span>Roukoz</span></div>
+      <p style="margin-top:10px">Attorney at Law · Beirut — Dubai</p>
+    </div>
+    <div>
+      <p>A&amp;A Associate Law Firm &amp; Legal Advisors — UAE<br>Roukoz Law Firm — Lebanon</p>
+    </div>
+    <div>
+      <p>+971 50 425 7019<br>info@aalegal.ae</p>
+    </div>
+  </div>
+  <div class="foot-note">
+    © <span id="yr"></span> Ziad Roukoz. All rights reserved. This website is provided for general information only and does not constitute legal advice; contacting the firm does not create an attorney–client relationship. Content compiled from the firm's public materials (aalegal.ae, roukozlaw.com).
+  </div>
+</footer>
+
+<script>
+/* Skyline windows */
+(function(){
+  const g=document.getElementById('windows');let s='';
+  const bl=[[60,470,70],[150,520,55],[360,560,80],[470,490,46],[720,440,60],[810,530,90],[1090,480,55],[1180,540,75],[1290,460,58]];
+  bl.forEach(([x,y,w])=>{
+    for(let r=y+18;r<780;r+=26){for(let c=x+8;c<x+w-8;c+=16){
+      if(Math.sin(r*c*.017)>.45)s+='<rect x="'+c+'" y="'+r+'" width="5" height="7"/>';
+    }}
+  });
+  g.innerHTML=s;
+})();
+
+/* Nav */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60),{passive:true});
+const burger=document.getElementById('burger'),links=document.getElementById('navLinks');
+burger.onclick=()=>{burger.classList.toggle('open');links.classList.toggle('open')};
+links.querySelectorAll('a').forEach(a=>a.onclick=()=>{burger.classList.remove('open');links.classList.remove('open')});
+
+/* Practice areas */
+const AREAS=[
+ ["Domestic & International Arbitration","Representation in institutional and ad-hoc arbitration proceedings — the core of the practice, with particular strength in high-value construction and commercial disputes.","Core Specialty"],
+ ["Construction & FIDIC Contracts","Drafting, negotiating and disputing FIDIC-based contracts; claims, delay analysis and employer/contractor advisory throughout the project lifecycle.","Core Specialty"],
+ ["Litigation","Court representation across civil and commercial matters in the UAE and Lebanon.",""],
+ ["Commercial Transactions & Corporate Law","Company formation, governance, M&A, shareholder arrangements and day-to-day commercial contracting.",""],
+ ["Banking & Finance","Advisory on facilities, security packages, project finance and regulatory matters.",""],
+ ["Private Equity & Project Finance","Structuring investments and financing for projects across the region.",""],
+ ["Real Estate","Acquisitions, disposals, leases and property disputes.",""],
+ ["Energy, Oil & Gas","Contracts and disputes in the energy sector.",""],
+ ["Maritime Law","Shipping, carriage and admiralty matters.",""],
+ ["Aviation","Regulatory and commercial aviation advisory.",""],
+ ["Insurance Law","Coverage disputes and policy advisory.",""],
+ ["Intellectual Property","Protection and enforcement of IP rights.",""],
+ ["Islamic Finance","Sharia-compliant structuring and documentation.",""],
+ ["Data Protection & Privacy","Compliance with UAE and international data regimes.",""],
+ ["Tax & Regulatory","Tax advisory and government relations.",""],
+ ["Pro Bono","A standing commitment to pro bono work for those who need it.",""]
+];
+const grid=document.getElementById('paGrid');
+grid.innerHTML=AREAS.map((a,i)=>'<div class="pa-card reveal" data-i="'+i+'"><div class="pa-head"><h3>'+a[0]+'</h3><span class="pa-icon">+</span></div><div class="pa-body"><p>'+a[1]+'</p>'+(a[2]?'<span class="pa-tag">'+a[2]+'</span>':'')+'</div></div>').join('');
+grid.addEventListener('click',e=>{
+  const card=e.target.closest('.pa-card');if(!card)return;
+  const body=card.querySelector('.pa-body'),open=card.classList.contains('open');
+  grid.querySelectorAll('.pa-card.open').forEach(c=>{c.classList.remove('open');c.querySelector('.pa-body').style.maxHeight=0});
+  if(!open){card.classList.add('open');body.style.maxHeight=body.scrollHeight+'px'}
+});
+
+/* Office toggle */
+document.querySelectorAll('.office-toggle button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.office-toggle button').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.office-panel').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  document.getElementById('panel-'+b.dataset.panel).classList.add('active');
+});
+
+/* Reveal on scroll */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* Counters */
+const cio=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;cio.unobserve(e.target);
+  const el=e.target,target=+el.dataset.count,t0=performance.now();
+  (function tick(t){const p=Math.min((t-t0)/1200,1);el.textContent=Math.round(target*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(tick)})(t0);
+}),{threshold:.6});
+document.querySelectorAll('.stat-num').forEach(el=>cio.observe(el));
+
+/* Form -> mailto */
+document.getElementById('consultForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const n=document.getElementById('fname').value,m=document.getElementById('fmatter').value,
+        msg=document.getElementById('fmsg').value,em=document.getElementById('femail').value;
+  location.href='mailto:info@aalegal.ae?subject='+encodeURIComponent('Consultation Request — '+m)+
+    '&body='+encodeURIComponent('Name: '+n+'\nEmail: '+em+'\nMatter: '+m+'\n\n'+msg);
+  document.getElementById('formMsg').style.display='block';
+});
+
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
